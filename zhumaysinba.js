@@ -117,17 +117,26 @@ const dataGet = () => {
             if (!fs.existsSync('./img')){   //creating img folder after cleaning temp
                 fs.mkdirSync('./img');
             }
-        
-            const downOptions = {
-                url: newData[0],
-                dest: './img/'                
-              }
-        
-            download.image(downOptions)
-                .then(({ filename }) => {
-                console.log('> Saved to', filename)
-                })
-                .catch((err) => console.error(err))
+            
+            for (i = 0; i < newData.length; i++) {
+                
+                const downOptions = {
+                    url: newData[i],
+                    dest: './img/'                
+                  }
+            
+                download.image(downOptions)
+                    .then(({ filename }) => {
+                    console.log('> Book page was saved to ==>', filename)
+                    })
+                    .catch((err) => console.error(err))
+
+                // if (i == (newData.length - 1)) {
+                //     console.log('<--== Downloaded ==-->')
+                // }
+
+            }
+
             
             
         });
