@@ -3,10 +3,11 @@ const scrape = require('website-scraper'); // web page scraper
 var rimraf = require("rimraf"); // directory removing
 var cheerio = require('cheerio'); // parser
 const download = require('image-downloader') // image downloader
+const PDFDocument = require('pdfkit'); // pdf creator
 
 // Removing old temp if exist
 rimraf.sync("./temp"); // links
-rimraf.sync("./img"); // images 
+// rimraf.sync("./img"); // images 
 
 const nodePath = process.argv[0];
 const appPath = process.argv[1];
@@ -106,39 +107,55 @@ const dataGet = () => {
 
             }
 
-            // console.log('Data', newData)
+            console.log('Data', newData)
+            let pdfData = []
+
+            for (i = 0; i < newData.length; i++) {
+                // console.log('./img' + newData[i].slice(58, -56))
+                pdfData.push('./img' + newData[i].slice(58, -56))
+            }
+            
+            console.log(pdfData)
+
             console.log('==> We got parsed links, there are', newData.length, 'links! ', '\n');
             console.log('==> Natalya morskaya pehota!')
 
             console.log('ok, da', '\n')
             
-            // Downloading the pictures
+            // ## Downloading the pictures ##
 
-            if (!fs.existsSync('./img')){   //creating img folder after cleaning temp
-                fs.mkdirSync('./img');
-            }
-            
-            for (i = 0; i < newData.length; i++) {
+            // if (!fs.existsSync('./img')){   //creating img folder after cleaning temp
+            //     fs.mkdirSync('./img');
+            // }
+
+            // for (i = 0; i < newData.length; i++) {
                 
-                const downOptions = {
-                    url: newData[i],
-                    dest: './img/'                
-                  }
+            //     const downOptions = {
+            //         url: newData[i],
+            //         dest: './img/'                
+            //       }
             
-                download.image(downOptions)
-                    .then(({ filename }) => {
-                    console.log('> Book page was saved to ==>', filename)
-                    })
-                    .catch((err) => console.error(err))
+            //     download.image(downOptions)
+            //         .then(({ filename }) => {
+            //             console.log('> Book page was saved to ==>', filename)
+            //         })
+            //         .catch((err) => console.error(err))
 
-                // if (i == (newData.length - 1)) {
-                //     console.log('<--== Downloaded ==-->')
-                // }
-
+            // }
+            
+            if (!fs.existsSync('./pdf')){   
+                fs.mkdirSync('./pdf');
             }
+        
+            const doc = new PDFDocument();  //starting new pdf here
+            doc.pipe(fs.createWriteStream('./pdf/output.pdf'));
+        
+            for (i = 0; i < pdfData.length; i++) {
+                doc.image(pdfData[i], 5, 5, {fit: [580, 830], align: 'center', valign: 'center'})
+            }
+            
+            doc.end();
 
-            
-            
         });
         
 
@@ -149,6 +166,4 @@ const dataGet = () => {
 
 scrape(options).then((result) => {console.log('-== Making zhumaysinba great again... ==-', '\n', '\n','---------------------'), dataGet()});
 console.log('')
-
-// We got the data on this moment...
 
