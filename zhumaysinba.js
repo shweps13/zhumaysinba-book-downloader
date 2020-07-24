@@ -74,15 +74,9 @@ const dataGet = () => {
         fs.readFile('./temp.txt', function(err, data) {
             if(err) throw err;
             var dataParsArr = data.toString().split("\n");
-            // console.log(dataParsArr)
-            // console.log(dataParsArr[10])
-            // console.log(dataParsArr[10].slice(12, -256)) // oh my goodness
-            // console.log(dataParsArr[10].slice(30, -141))
-
             let newData = []
 
             for (i = 0; i < dataParsArr.length; i++) {
-            // for (i = 0; i < 15; i++) {
                 let unit = ""
                 let page = false
                 let start = false
@@ -93,22 +87,19 @@ const dataGet = () => {
                     if (abort == true) {
                         break
                     } else if (page == true && start == true && dataParsArr[i][j] == '"') {
-                        // console.log('============Done=============')
                         abort = true
                         break
+                    } else if (page == true && start == true) {
+                        unit = unit + dataParsArr[i][j]
                     } else if (dataParsArr[i][j] == 'p') {
                         page = true
                     } else if (dataParsArr[i][j] == '"') {
                         start = true
-                    } else if (page == true && start == true) {
-                        // console.log('Here')
-                        unit = unit + dataParsArr[i][j]
                     } 
                 }
                 
-                // console.log('=>>', unit)
                 if (unit.length > 25 ) {
-                    newData.push(unit)
+                    newData.push('http://kazneb.kz' + unit)
                 }
 
             }
