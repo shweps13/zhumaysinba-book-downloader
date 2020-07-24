@@ -1,5 +1,9 @@
 const fs = require('fs-extra'); // files operations
 const scrape = require('website-scraper'); // web page scraper
+var rimraf = require("rimraf"); // directory removing
+
+// Removing old temp if exist
+rimraf.sync("./temp1");
 
 const nodePath = process.argv[0];
 const appPath = process.argv[1];
@@ -17,10 +21,13 @@ console.log('---------------------')
 let fileTemp = './temp.txt'
 fs.openSync(fileTemp, 'w')
 
+
+
 // Scrapper plugins
 class MyPlugin {
     apply(registerAction) {
         registerAction('beforeStart', async ({options}) => {console.log('==> Starting download secret zhumaysinba address from ', options.urls[0])});
+        // registerAction('beforeStart', async ({options}) => {rimraf("./temp1", function () { console.log("==> [Old temp removed]") })});
         registerAction('afterFinish', async () => {console.log('==> Done! We got book address!')});
         registerAction('error', async ({error}) => {console.error(error)});
     }
