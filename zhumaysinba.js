@@ -50,14 +50,28 @@ const dataGet = () => {
         if (err) {
           return console.log(err);
         }
-        // console.log(data);
-        // tempData = data
+
         const $ = cheerio.load(data)
-        const pewpew = $('script')
-        console.log(pewpew.text())
-        console.log(pewpew.html())
-      });
-    
+
+        // first script
+        const firstScr = $('script')
+        console.log(firstScr.html())
+        console.log(firstScr.text())
+        
+        // scond script
+        const scrArr = [];
+
+        const secScr = $('script').each(function(i, elem) {
+            scrArr[i] = $(this).html();
+        });
+        
+        scrArr.join(', ');
+        console.log(secScr.html())
+        console.log(secScr.length)
+        console.log(scrArr)
+      
+    });
+
     
 
 
