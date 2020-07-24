@@ -67,8 +67,56 @@ const dataGet = () => {
         // Save address data to the file
         fs.appendFile('./temp.txt', dataScr, function (err) {
             if (err) throw err;
-            console.log('==> We got some parsed adresses, but not so good - let us pozdorovatsya s bratkami', '\n');
-          });
+            console.log('==> We got some parsed adresses, but not good enough - let us pozdorovatsya s bratkami', '\n');
+        });
+
+        // Trying to parce that hell
+        fs.readFile('./temp.txt', function(err, data) {
+            if(err) throw err;
+            var dataParsArr = data.toString().split("\n");
+            // console.log(dataParsArr)
+            // console.log(dataParsArr[10])
+            // console.log(dataParsArr[10].slice(12, -256)) // oh my goodness
+            // console.log(dataParsArr[10].slice(30, -141))
+
+            let newData = []
+
+            // for (i = 0; i < dataParsArr.length; i++) {
+            for (i = 14; i < 15; i++) {
+                let unit = ""
+                let page = false
+                let start = false
+                let abort = false
+
+                for (let j = 0; j < dataParsArr[i].length; j++) {
+                    // console.log(dataParsArr[i][j]);
+                    
+                    if (page == true && start == true && dataParsArr[i][j] == '"') {
+                        // console.log('============Done=============')
+                        abort = true
+                        break
+                    } else if (dataParsArr[i][j] == 'p') {
+                        page = true
+                    } else if (dataParsArr[i][j] == '"') {
+                        start = true
+                    } else if (page == true && start == true) {
+                        // console.log('Here')
+                        unit = unit + dataParsArr[i][j]
+                    }
+                }
+                
+                console.log('=>>', unit)
+                newData.push(unit)
+
+                if (abort == true) {
+                    break
+                }
+
+            }
+
+            console.log('Data', newData)
+        });
+        
 
     });
 
