@@ -1,0 +1,486 @@
+
+
+    $(document).ready(function () {
+
+
+        var pages = [];
+
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0001.png?time=1595564258631&key=de51a815db8048494470085bc2a5a17a", thumb: "/FileStore/dataFiles/02/37/1557843/content/0001.png?time=1595564258631&key=de51a815db8048494470085bc2a5a17a", title: "Стр. " +1});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0002.png?time=1595564258631&key=046b3cf0e5f23af65eeb8e35fdad54bf", thumb: "/FileStore/dataFiles/02/37/1557843/content/0002.png?time=1595564258631&key=046b3cf0e5f23af65eeb8e35fdad54bf", title: "Стр. " +2});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0003.png?time=1595564258631&key=60b4f917e299b24b994bc29fb99fcabf", thumb: "/FileStore/dataFiles/02/37/1557843/content/0003.png?time=1595564258631&key=60b4f917e299b24b994bc29fb99fcabf", title: "Стр. " +3});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0004.png?time=1595564258631&key=25ba21f52330035294ad404a262d6946", thumb: "/FileStore/dataFiles/02/37/1557843/content/0004.png?time=1595564258631&key=25ba21f52330035294ad404a262d6946", title: "Стр. " +4});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0005.png?time=1595564258631&key=024a6b5ff84b6c25868a10577e781d9d", thumb: "/FileStore/dataFiles/02/37/1557843/content/0005.png?time=1595564258631&key=024a6b5ff84b6c25868a10577e781d9d", title: "Стр. " +5});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0006.png?time=1595564258632&key=8526a1dd87f16854b4b6d3cf9bbeb92c", thumb: "/FileStore/dataFiles/02/37/1557843/content/0006.png?time=1595564258632&key=8526a1dd87f16854b4b6d3cf9bbeb92c", title: "Стр. " +6});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0007.png?time=1595564258632&key=da6d3098b2662f37282905798d786240", thumb: "/FileStore/dataFiles/02/37/1557843/content/0007.png?time=1595564258632&key=da6d3098b2662f37282905798d786240", title: "Стр. " +7});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0008.png?time=1595564258632&key=0140dd5812b37c544506238d593bc328", thumb: "/FileStore/dataFiles/02/37/1557843/content/0008.png?time=1595564258632&key=0140dd5812b37c544506238d593bc328", title: "Стр. " +8});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0009.png?time=1595564258632&key=194790fc8463c92744a6cc78061f38ea", thumb: "/FileStore/dataFiles/02/37/1557843/content/0009.png?time=1595564258632&key=194790fc8463c92744a6cc78061f38ea", title: "Стр. " +9});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0010.png?time=1595564258632&key=9edf423e24dd4ebb28955252c4ebab7a", thumb: "/FileStore/dataFiles/02/37/1557843/content/0010.png?time=1595564258632&key=9edf423e24dd4ebb28955252c4ebab7a", title: "Стр. " +10});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0011.png?time=1595564258633&key=8d9cca62ff9c21079fc63b16badf25b8", thumb: "/FileStore/dataFiles/02/37/1557843/content/0011.png?time=1595564258633&key=8d9cca62ff9c21079fc63b16badf25b8", title: "Стр. " +11});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0012.png?time=1595564258633&key=e5c10aa18db4282600a773743348d4d1", thumb: "/FileStore/dataFiles/02/37/1557843/content/0012.png?time=1595564258633&key=e5c10aa18db4282600a773743348d4d1", title: "Стр. " +12});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0013.png?time=1595564258633&key=f096ecd015968019a7c927781665f3bd", thumb: "/FileStore/dataFiles/02/37/1557843/content/0013.png?time=1595564258633&key=f096ecd015968019a7c927781665f3bd", title: "Стр. " +13});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0014.png?time=1595564258633&key=e691053c7df88d82a9e4a1fb6d2dcabc", thumb: "/FileStore/dataFiles/02/37/1557843/content/0014.png?time=1595564258633&key=e691053c7df88d82a9e4a1fb6d2dcabc", title: "Стр. " +14});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0015.png?time=1595564258633&key=6c1f33b4b70e571d559db63cc4a15fc1", thumb: "/FileStore/dataFiles/02/37/1557843/content/0015.png?time=1595564258633&key=6c1f33b4b70e571d559db63cc4a15fc1", title: "Стр. " +15});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0016.png?time=1595564258633&key=2bdc549648b73c5a77e4a109b6c1236e", thumb: "/FileStore/dataFiles/02/37/1557843/content/0016.png?time=1595564258633&key=2bdc549648b73c5a77e4a109b6c1236e", title: "Стр. " +16});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0017.png?time=1595564258634&key=f4cd9b56293ec7de6d9785eeb918497f", thumb: "/FileStore/dataFiles/02/37/1557843/content/0017.png?time=1595564258634&key=f4cd9b56293ec7de6d9785eeb918497f", title: "Стр. " +17});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0018.png?time=1595564258634&key=78841f38f85640cb80e86124206ee32d", thumb: "/FileStore/dataFiles/02/37/1557843/content/0018.png?time=1595564258634&key=78841f38f85640cb80e86124206ee32d", title: "Стр. " +18});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0019.png?time=1595564258634&key=14c0ff5d3db7141fc89ce3f094c31594", thumb: "/FileStore/dataFiles/02/37/1557843/content/0019.png?time=1595564258634&key=14c0ff5d3db7141fc89ce3f094c31594", title: "Стр. " +19});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0020.png?time=1595564258634&key=d227e3a87f89b0c92d1cf6a7da503c16", thumb: "/FileStore/dataFiles/02/37/1557843/content/0020.png?time=1595564258634&key=d227e3a87f89b0c92d1cf6a7da503c16", title: "Стр. " +20});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0021.png?time=1595564258634&key=e44836cd73c0d147b9bd84ed882b7106", thumb: "/FileStore/dataFiles/02/37/1557843/content/0021.png?time=1595564258634&key=e44836cd73c0d147b9bd84ed882b7106", title: "Стр. " +21});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0022.png?time=1595564258635&key=2a8c6f6183aad0429ce0cbc159faaf25", thumb: "/FileStore/dataFiles/02/37/1557843/content/0022.png?time=1595564258635&key=2a8c6f6183aad0429ce0cbc159faaf25", title: "Стр. " +22});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0023.png?time=1595564258635&key=3ff256ec3415eb39c2b033a83d803383", thumb: "/FileStore/dataFiles/02/37/1557843/content/0023.png?time=1595564258635&key=3ff256ec3415eb39c2b033a83d803383", title: "Стр. " +23});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0024.png?time=1595564258635&key=86724ab3ee16ea92e10b4e58e48ab4e8", thumb: "/FileStore/dataFiles/02/37/1557843/content/0024.png?time=1595564258635&key=86724ab3ee16ea92e10b4e58e48ab4e8", title: "Стр. " +24});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0025.png?time=1595564258635&key=a5d3d85749434539b734942c04e17895", thumb: "/FileStore/dataFiles/02/37/1557843/content/0025.png?time=1595564258635&key=a5d3d85749434539b734942c04e17895", title: "Стр. " +25});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0026.png?time=1595564258635&key=dcd3570b644e634caf2d7534b614fe24", thumb: "/FileStore/dataFiles/02/37/1557843/content/0026.png?time=1595564258635&key=dcd3570b644e634caf2d7534b614fe24", title: "Стр. " +26});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0027.png?time=1595564258636&key=bdf26fc465e1dd5bd735d755863b2a39", thumb: "/FileStore/dataFiles/02/37/1557843/content/0027.png?time=1595564258636&key=bdf26fc465e1dd5bd735d755863b2a39", title: "Стр. " +27});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0028.png?time=1595564258636&key=6ccceef81005686eda65c379f3bff1c5", thumb: "/FileStore/dataFiles/02/37/1557843/content/0028.png?time=1595564258636&key=6ccceef81005686eda65c379f3bff1c5", title: "Стр. " +28});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0029.png?time=1595564258636&key=74c96fb849c415f97580a25178298498", thumb: "/FileStore/dataFiles/02/37/1557843/content/0029.png?time=1595564258636&key=74c96fb849c415f97580a25178298498", title: "Стр. " +29});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0030.png?time=1595564258636&key=7cf1e200f80af0e7227b467f176ff944", thumb: "/FileStore/dataFiles/02/37/1557843/content/0030.png?time=1595564258636&key=7cf1e200f80af0e7227b467f176ff944", title: "Стр. " +30});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0031.png?time=1595564258636&key=15aee65d40f4644e7a0cdb04fb09307b", thumb: "/FileStore/dataFiles/02/37/1557843/content/0031.png?time=1595564258636&key=15aee65d40f4644e7a0cdb04fb09307b", title: "Стр. " +31});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0032.png?time=1595564258636&key=f3b55284f15d31ae1941ad98a5f4d986", thumb: "/FileStore/dataFiles/02/37/1557843/content/0032.png?time=1595564258636&key=f3b55284f15d31ae1941ad98a5f4d986", title: "Стр. " +32});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0033.png?time=1595564258637&key=73e83bf6a862d52fe7cc0c12c171cf64", thumb: "/FileStore/dataFiles/02/37/1557843/content/0033.png?time=1595564258637&key=73e83bf6a862d52fe7cc0c12c171cf64", title: "Стр. " +33});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0034.png?time=1595564258637&key=6ba8f0cef5cb831ec1fba107457d170b", thumb: "/FileStore/dataFiles/02/37/1557843/content/0034.png?time=1595564258637&key=6ba8f0cef5cb831ec1fba107457d170b", title: "Стр. " +34});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0035.png?time=1595564258637&key=83920d8876b2a5176a80c0f7c5695e83", thumb: "/FileStore/dataFiles/02/37/1557843/content/0035.png?time=1595564258637&key=83920d8876b2a5176a80c0f7c5695e83", title: "Стр. " +35});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0036.png?time=1595564258637&key=775256ce82247c3130e72829967fe156", thumb: "/FileStore/dataFiles/02/37/1557843/content/0036.png?time=1595564258637&key=775256ce82247c3130e72829967fe156", title: "Стр. " +36});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0037.png?time=1595564258637&key=127d1ec79e879d301aaddb52f3c7f14f", thumb: "/FileStore/dataFiles/02/37/1557843/content/0037.png?time=1595564258637&key=127d1ec79e879d301aaddb52f3c7f14f", title: "Стр. " +37});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0038.png?time=1595564258638&key=aa269751a774b79681278d6f5b7c0517", thumb: "/FileStore/dataFiles/02/37/1557843/content/0038.png?time=1595564258638&key=aa269751a774b79681278d6f5b7c0517", title: "Стр. " +38});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0039.png?time=1595564258638&key=3530eb50022a566f951f266f0157f7f3", thumb: "/FileStore/dataFiles/02/37/1557843/content/0039.png?time=1595564258638&key=3530eb50022a566f951f266f0157f7f3", title: "Стр. " +39});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0040.png?time=1595564258638&key=eb1c1784eeeb46889f8e29656a2b0975", thumb: "/FileStore/dataFiles/02/37/1557843/content/0040.png?time=1595564258638&key=eb1c1784eeeb46889f8e29656a2b0975", title: "Стр. " +40});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0041.png?time=1595564258638&key=04e5157606a7566162df41ddb25d9b28", thumb: "/FileStore/dataFiles/02/37/1557843/content/0041.png?time=1595564258638&key=04e5157606a7566162df41ddb25d9b28", title: "Стр. " +41});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0042.png?time=1595564258638&key=03573f6373f46da23fe59c644c578821", thumb: "/FileStore/dataFiles/02/37/1557843/content/0042.png?time=1595564258638&key=03573f6373f46da23fe59c644c578821", title: "Стр. " +42});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0043.png?time=1595564258638&key=d16e8b73d88128c245a27700bc8910f3", thumb: "/FileStore/dataFiles/02/37/1557843/content/0043.png?time=1595564258638&key=d16e8b73d88128c245a27700bc8910f3", title: "Стр. " +43});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0044.png?time=1595564258639&key=730daee5ed6ffa1831f3ceda54f192f0", thumb: "/FileStore/dataFiles/02/37/1557843/content/0044.png?time=1595564258639&key=730daee5ed6ffa1831f3ceda54f192f0", title: "Стр. " +44});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0045.png?time=1595564258639&key=29c846b265b71cb1c536d1cf92215cc6", thumb: "/FileStore/dataFiles/02/37/1557843/content/0045.png?time=1595564258639&key=29c846b265b71cb1c536d1cf92215cc6", title: "Стр. " +45});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0046.png?time=1595564258639&key=f88dce8b8a544b60d3c8c1b2de7ec810", thumb: "/FileStore/dataFiles/02/37/1557843/content/0046.png?time=1595564258639&key=f88dce8b8a544b60d3c8c1b2de7ec810", title: "Стр. " +46});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0047.png?time=1595564258639&key=574a9f99ff446eee3dab5d6e1a0dba51", thumb: "/FileStore/dataFiles/02/37/1557843/content/0047.png?time=1595564258639&key=574a9f99ff446eee3dab5d6e1a0dba51", title: "Стр. " +47});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0048.png?time=1595564258639&key=49e3fc8766d89899f077a66d0db01b51", thumb: "/FileStore/dataFiles/02/37/1557843/content/0048.png?time=1595564258639&key=49e3fc8766d89899f077a66d0db01b51", title: "Стр. " +48});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0049.png?time=1595564258640&key=5a9486ec9daaba142b2752c6af7bd587", thumb: "/FileStore/dataFiles/02/37/1557843/content/0049.png?time=1595564258640&key=5a9486ec9daaba142b2752c6af7bd587", title: "Стр. " +49});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0050.png?time=1595564258640&key=8f2ce00cdf1013d03bbf8fe54165f2f2", thumb: "/FileStore/dataFiles/02/37/1557843/content/0050.png?time=1595564258640&key=8f2ce00cdf1013d03bbf8fe54165f2f2", title: "Стр. " +50});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0051.png?time=1595564258640&key=8d3289e34aa931947740ae125a460e94", thumb: "/FileStore/dataFiles/02/37/1557843/content/0051.png?time=1595564258640&key=8d3289e34aa931947740ae125a460e94", title: "Стр. " +51});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0052.png?time=1595564258640&key=9b45ed1b2f95f6127ed32924868888bf", thumb: "/FileStore/dataFiles/02/37/1557843/content/0052.png?time=1595564258640&key=9b45ed1b2f95f6127ed32924868888bf", title: "Стр. " +52});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0053.png?time=1595564258640&key=74a74b547ab00fc3880a61707718ae10", thumb: "/FileStore/dataFiles/02/37/1557843/content/0053.png?time=1595564258640&key=74a74b547ab00fc3880a61707718ae10", title: "Стр. " +53});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0054.png?time=1595564258640&key=4d567f16a87671128bec4f73bb261dc2", thumb: "/FileStore/dataFiles/02/37/1557843/content/0054.png?time=1595564258640&key=4d567f16a87671128bec4f73bb261dc2", title: "Стр. " +54});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0055.png?time=1595564258641&key=fc8cce35aebc221fbbd4c07765365787", thumb: "/FileStore/dataFiles/02/37/1557843/content/0055.png?time=1595564258641&key=fc8cce35aebc221fbbd4c07765365787", title: "Стр. " +55});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0056.png?time=1595564258641&key=28146dcd9d619a7d1dca9e64c791a0f4", thumb: "/FileStore/dataFiles/02/37/1557843/content/0056.png?time=1595564258641&key=28146dcd9d619a7d1dca9e64c791a0f4", title: "Стр. " +56});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0057.png?time=1595564258641&key=c60605c6c632641422ca00e6bff6033d", thumb: "/FileStore/dataFiles/02/37/1557843/content/0057.png?time=1595564258641&key=c60605c6c632641422ca00e6bff6033d", title: "Стр. " +57});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0058.png?time=1595564258641&key=d3845042cf50c56942e78e3ea6b071ac", thumb: "/FileStore/dataFiles/02/37/1557843/content/0058.png?time=1595564258641&key=d3845042cf50c56942e78e3ea6b071ac", title: "Стр. " +58});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0059.png?time=1595564258641&key=af48d5ea682568d8ccf1cfc53477f5e3", thumb: "/FileStore/dataFiles/02/37/1557843/content/0059.png?time=1595564258641&key=af48d5ea682568d8ccf1cfc53477f5e3", title: "Стр. " +59});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0060.png?time=1595564258642&key=22c9c6bdd49c6f9f55c5d1e1f213d645", thumb: "/FileStore/dataFiles/02/37/1557843/content/0060.png?time=1595564258642&key=22c9c6bdd49c6f9f55c5d1e1f213d645", title: "Стр. " +60});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0061.png?time=1595564258642&key=b86e971c9c308dacf034c93a7f8e712a", thumb: "/FileStore/dataFiles/02/37/1557843/content/0061.png?time=1595564258642&key=b86e971c9c308dacf034c93a7f8e712a", title: "Стр. " +61});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0062.png?time=1595564258642&key=1167ec7ad2ffbebe7da413e090816c02", thumb: "/FileStore/dataFiles/02/37/1557843/content/0062.png?time=1595564258642&key=1167ec7ad2ffbebe7da413e090816c02", title: "Стр. " +62});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0063.png?time=1595564258642&key=a82525ddcd4a5be9498d5d5edd88cb1a", thumb: "/FileStore/dataFiles/02/37/1557843/content/0063.png?time=1595564258642&key=a82525ddcd4a5be9498d5d5edd88cb1a", title: "Стр. " +63});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0064.png?time=1595564258642&key=5882c75c07896169cba8020bb10f07f8", thumb: "/FileStore/dataFiles/02/37/1557843/content/0064.png?time=1595564258642&key=5882c75c07896169cba8020bb10f07f8", title: "Стр. " +64});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0065.png?time=1595564258642&key=8ec07e1d285448a242bf7285e7368fb5", thumb: "/FileStore/dataFiles/02/37/1557843/content/0065.png?time=1595564258642&key=8ec07e1d285448a242bf7285e7368fb5", title: "Стр. " +65});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0066.png?time=1595564258643&key=0a08abb6de5babe2295f8db17d202ae8", thumb: "/FileStore/dataFiles/02/37/1557843/content/0066.png?time=1595564258643&key=0a08abb6de5babe2295f8db17d202ae8", title: "Стр. " +66});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0067.png?time=1595564258643&key=cd9b3ecc2dd04e10129025f96a2ab218", thumb: "/FileStore/dataFiles/02/37/1557843/content/0067.png?time=1595564258643&key=cd9b3ecc2dd04e10129025f96a2ab218", title: "Стр. " +67});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0068.png?time=1595564258643&key=2544f867b2da924c2917e11c4bb172aa", thumb: "/FileStore/dataFiles/02/37/1557843/content/0068.png?time=1595564258643&key=2544f867b2da924c2917e11c4bb172aa", title: "Стр. " +68});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0069.png?time=1595564258643&key=416decaaf497ebf7c68ce5c71d6f9f94", thumb: "/FileStore/dataFiles/02/37/1557843/content/0069.png?time=1595564258643&key=416decaaf497ebf7c68ce5c71d6f9f94", title: "Стр. " +69});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0070.png?time=1595564258643&key=13ca316cb7494ddea739159129d1b27d", thumb: "/FileStore/dataFiles/02/37/1557843/content/0070.png?time=1595564258643&key=13ca316cb7494ddea739159129d1b27d", title: "Стр. " +70});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0071.png?time=1595564258644&key=85504a8154c8d6559020f79810ad466c", thumb: "/FileStore/dataFiles/02/37/1557843/content/0071.png?time=1595564258644&key=85504a8154c8d6559020f79810ad466c", title: "Стр. " +71});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0072.png?time=1595564258644&key=58a00d619d8d61570cc2162311da4934", thumb: "/FileStore/dataFiles/02/37/1557843/content/0072.png?time=1595564258644&key=58a00d619d8d61570cc2162311da4934", title: "Стр. " +72});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0073.png?time=1595564258644&key=6b1126ad4bd8b34b465bd77d20f55827", thumb: "/FileStore/dataFiles/02/37/1557843/content/0073.png?time=1595564258644&key=6b1126ad4bd8b34b465bd77d20f55827", title: "Стр. " +73});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0074.png?time=1595564258644&key=910d958deaae00ef12081cc64d6e02da", thumb: "/FileStore/dataFiles/02/37/1557843/content/0074.png?time=1595564258644&key=910d958deaae00ef12081cc64d6e02da", title: "Стр. " +74});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0075.png?time=1595564258644&key=d22e39dc966e0f716a840ca0d9636611", thumb: "/FileStore/dataFiles/02/37/1557843/content/0075.png?time=1595564258644&key=d22e39dc966e0f716a840ca0d9636611", title: "Стр. " +75});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0076.png?time=1595564258645&key=a997b2d50b2fabadbda8ae6430fe7ae5", thumb: "/FileStore/dataFiles/02/37/1557843/content/0076.png?time=1595564258645&key=a997b2d50b2fabadbda8ae6430fe7ae5", title: "Стр. " +76});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0077.png?time=1595564258645&key=04688c8789f0ebb45319309bcdccf996", thumb: "/FileStore/dataFiles/02/37/1557843/content/0077.png?time=1595564258645&key=04688c8789f0ebb45319309bcdccf996", title: "Стр. " +77});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0078.png?time=1595564258645&key=7e01693ece658e419b2f71923fd079fb", thumb: "/FileStore/dataFiles/02/37/1557843/content/0078.png?time=1595564258645&key=7e01693ece658e419b2f71923fd079fb", title: "Стр. " +78});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0079.png?time=1595564258645&key=163bbcb3d977716b6f1b2ef77ea9d974", thumb: "/FileStore/dataFiles/02/37/1557843/content/0079.png?time=1595564258645&key=163bbcb3d977716b6f1b2ef77ea9d974", title: "Стр. " +79});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0080.png?time=1595564258645&key=6132b51628d86fae7b3eba5e50e3a775", thumb: "/FileStore/dataFiles/02/37/1557843/content/0080.png?time=1595564258645&key=6132b51628d86fae7b3eba5e50e3a775", title: "Стр. " +80});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0081.png?time=1595564258645&key=2a07967850686bb3e286cf0b83d51b2f", thumb: "/FileStore/dataFiles/02/37/1557843/content/0081.png?time=1595564258645&key=2a07967850686bb3e286cf0b83d51b2f", title: "Стр. " +81});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0082.png?time=1595564258646&key=e18b93243a6c95704ed6fafa14cc5824", thumb: "/FileStore/dataFiles/02/37/1557843/content/0082.png?time=1595564258646&key=e18b93243a6c95704ed6fafa14cc5824", title: "Стр. " +82});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0083.png?time=1595564258646&key=23f06a248ef595a227baaf6bae8e9ae4", thumb: "/FileStore/dataFiles/02/37/1557843/content/0083.png?time=1595564258646&key=23f06a248ef595a227baaf6bae8e9ae4", title: "Стр. " +83});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0084.png?time=1595564258646&key=be131babe274cd3f826dd66db942e47e", thumb: "/FileStore/dataFiles/02/37/1557843/content/0084.png?time=1595564258646&key=be131babe274cd3f826dd66db942e47e", title: "Стр. " +84});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0085.png?time=1595564258646&key=dd2c127ae0e287d1d48171124315ccdd", thumb: "/FileStore/dataFiles/02/37/1557843/content/0085.png?time=1595564258646&key=dd2c127ae0e287d1d48171124315ccdd", title: "Стр. " +85});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0086.png?time=1595564258646&key=565210143543f1bc0bc199dc40d65f86", thumb: "/FileStore/dataFiles/02/37/1557843/content/0086.png?time=1595564258646&key=565210143543f1bc0bc199dc40d65f86", title: "Стр. " +86});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0087.png?time=1595564258647&key=49ab030748bdb09599f6caff1674d63f", thumb: "/FileStore/dataFiles/02/37/1557843/content/0087.png?time=1595564258647&key=49ab030748bdb09599f6caff1674d63f", title: "Стр. " +87});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0088.png?time=1595564258647&key=24ba9895c25174db87c8692d6960fc31", thumb: "/FileStore/dataFiles/02/37/1557843/content/0088.png?time=1595564258647&key=24ba9895c25174db87c8692d6960fc31", title: "Стр. " +88});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0089.png?time=1595564258647&key=96cf101b5ffc5873c9d240fac4229218", thumb: "/FileStore/dataFiles/02/37/1557843/content/0089.png?time=1595564258647&key=96cf101b5ffc5873c9d240fac4229218", title: "Стр. " +89});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0090.png?time=1595564258647&key=1de0b58f2ef02da003c581d0e0211751", thumb: "/FileStore/dataFiles/02/37/1557843/content/0090.png?time=1595564258647&key=1de0b58f2ef02da003c581d0e0211751", title: "Стр. " +90});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0091.png?time=1595564258647&key=3f629a8b5553889805d9134ab18f0856", thumb: "/FileStore/dataFiles/02/37/1557843/content/0091.png?time=1595564258647&key=3f629a8b5553889805d9134ab18f0856", title: "Стр. " +91});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0092.png?time=1595564258647&key=f8cae85b386d2cc9e9c0f75986999e27", thumb: "/FileStore/dataFiles/02/37/1557843/content/0092.png?time=1595564258647&key=f8cae85b386d2cc9e9c0f75986999e27", title: "Стр. " +92});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0093.png?time=1595564258648&key=739ed02946b766d375f495e2837decf2", thumb: "/FileStore/dataFiles/02/37/1557843/content/0093.png?time=1595564258648&key=739ed02946b766d375f495e2837decf2", title: "Стр. " +93});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0094.png?time=1595564258648&key=0c0fd20ccb6a105c09db1d0b32e0e5ef", thumb: "/FileStore/dataFiles/02/37/1557843/content/0094.png?time=1595564258648&key=0c0fd20ccb6a105c09db1d0b32e0e5ef", title: "Стр. " +94});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0095.png?time=1595564258648&key=62d144cac9550fb31cc706b51030b2b5", thumb: "/FileStore/dataFiles/02/37/1557843/content/0095.png?time=1595564258648&key=62d144cac9550fb31cc706b51030b2b5", title: "Стр. " +95});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0096.png?time=1595564258648&key=c008fa9b67fb12acd516241dad9a8cf3", thumb: "/FileStore/dataFiles/02/37/1557843/content/0096.png?time=1595564258648&key=c008fa9b67fb12acd516241dad9a8cf3", title: "Стр. " +96});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0097.png?time=1595564258648&key=b2f5d6bb7725caf90525bb2213800dab", thumb: "/FileStore/dataFiles/02/37/1557843/content/0097.png?time=1595564258648&key=b2f5d6bb7725caf90525bb2213800dab", title: "Стр. " +97});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0098.png?time=1595564258649&key=7d0f502e3693ce4a1f532adb0c86a5fd", thumb: "/FileStore/dataFiles/02/37/1557843/content/0098.png?time=1595564258649&key=7d0f502e3693ce4a1f532adb0c86a5fd", title: "Стр. " +98});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0099.png?time=1595564258649&key=38df781fd16f0d400dca5bdfc834f5e8", thumb: "/FileStore/dataFiles/02/37/1557843/content/0099.png?time=1595564258649&key=38df781fd16f0d400dca5bdfc834f5e8", title: "Стр. " +99});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0100.png?time=1595564258649&key=062ef05ee65d3523dbda3779067bb9f7", thumb: "/FileStore/dataFiles/02/37/1557843/content/0100.png?time=1595564258649&key=062ef05ee65d3523dbda3779067bb9f7", title: "Стр. " +100});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0101.png?time=1595564258649&key=1eb57645b0e8e769793834f13ef3a7cc", thumb: "/FileStore/dataFiles/02/37/1557843/content/0101.png?time=1595564258649&key=1eb57645b0e8e769793834f13ef3a7cc", title: "Стр. " +101});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0102.png?time=1595564258649&key=c5e4bcbe7fb57db671899a6eb22a29d4", thumb: "/FileStore/dataFiles/02/37/1557843/content/0102.png?time=1595564258649&key=c5e4bcbe7fb57db671899a6eb22a29d4", title: "Стр. " +102});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0103.png?time=1595564258649&key=09ec716c564e2a8c586dbbffa7edb307", thumb: "/FileStore/dataFiles/02/37/1557843/content/0103.png?time=1595564258649&key=09ec716c564e2a8c586dbbffa7edb307", title: "Стр. " +103});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0104.png?time=1595564258650&key=70316008847e1b91c1c5fd88d48bb748", thumb: "/FileStore/dataFiles/02/37/1557843/content/0104.png?time=1595564258650&key=70316008847e1b91c1c5fd88d48bb748", title: "Стр. " +104});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0105.png?time=1595564258650&key=cacdd3fa3de55258a24e48ef8289fcb5", thumb: "/FileStore/dataFiles/02/37/1557843/content/0105.png?time=1595564258650&key=cacdd3fa3de55258a24e48ef8289fcb5", title: "Стр. " +105});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0106.png?time=1595564258650&key=67e45e88b5ad450a9ed5ad8e87b1b97b", thumb: "/FileStore/dataFiles/02/37/1557843/content/0106.png?time=1595564258650&key=67e45e88b5ad450a9ed5ad8e87b1b97b", title: "Стр. " +106});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0107.png?time=1595564258650&key=a699ebc66e9b7f22d591bbc0520691ba", thumb: "/FileStore/dataFiles/02/37/1557843/content/0107.png?time=1595564258650&key=a699ebc66e9b7f22d591bbc0520691ba", title: "Стр. " +107});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0108.png?time=1595564258650&key=877da372a733900444976571b9fef57a", thumb: "/FileStore/dataFiles/02/37/1557843/content/0108.png?time=1595564258650&key=877da372a733900444976571b9fef57a", title: "Стр. " +108});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0109.png?time=1595564258651&key=d7db3e7b91d6863235305deee5f7e48e", thumb: "/FileStore/dataFiles/02/37/1557843/content/0109.png?time=1595564258651&key=d7db3e7b91d6863235305deee5f7e48e", title: "Стр. " +109});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0110.png?time=1595564258651&key=7b9c9f927643a0b8686e9242b376c351", thumb: "/FileStore/dataFiles/02/37/1557843/content/0110.png?time=1595564258651&key=7b9c9f927643a0b8686e9242b376c351", title: "Стр. " +110});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0111.png?time=1595564258651&key=60a2e492986ec756f27cfc45e88f7fed", thumb: "/FileStore/dataFiles/02/37/1557843/content/0111.png?time=1595564258651&key=60a2e492986ec756f27cfc45e88f7fed", title: "Стр. " +111});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0112.png?time=1595564258651&key=483921500f5a910957e90f193b0b9d68", thumb: "/FileStore/dataFiles/02/37/1557843/content/0112.png?time=1595564258651&key=483921500f5a910957e90f193b0b9d68", title: "Стр. " +112});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0113.png?time=1595564258652&key=dcd86082581f6a4da7d35b78532cbc61", thumb: "/FileStore/dataFiles/02/37/1557843/content/0113.png?time=1595564258652&key=dcd86082581f6a4da7d35b78532cbc61", title: "Стр. " +113});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0114.png?time=1595564258652&key=e0afb10b9b9fe5ca768e04b716a59316", thumb: "/FileStore/dataFiles/02/37/1557843/content/0114.png?time=1595564258652&key=e0afb10b9b9fe5ca768e04b716a59316", title: "Стр. " +114});
+        
+            pages.push({src: "/FileStore/dataFiles/02/37/1557843/content/0115.png?time=1595564258652&key=d486c3ea0372d02d9753086644cb59f0", thumb: "/FileStore/dataFiles/02/37/1557843/content/0115.png?time=1595564258652&key=d486c3ea0372d02d9753086644cb59f0", title: "Стр. " +115});
+        
+
+        var options = {
+            name                  : "<small>Автор: Тогжанов Г.</small><br/><span>Казакский колониальный аул</span>",
+            //  pdfUrl:"pdf/sg246689.pdf", pdfPageScale:1.5,
+            pages                 : pages,
+            zoomLevels            : [.7, 1, 2, 3, 5],
+            backgroundPattern     : "",
+            backgroundColor       : "",
+            skin                  : "light",
+            lights                : !0,
+            spotlightColor        : 0x000000,
+            spotlightIntensity    : 0.55,
+            ambientLightColor     : 0x333333,
+            pageRoughness         : 1,
+            pageMetalness         : !1,
+            pageHardness          : 2,
+            coverHardness         : 2,
+            pageSegmentsW         : 5,
+            pageSegmentsH         : 1,
+            pageMiddleShadowSize  : 10,
+            pageMiddleShadowColorL: "#000000",
+            pageMiddleShadowColorR: "#000000",
+            pageFlipDuration      : 1,
+            antialias             : true,
+            autoplayInterval      : 6500,
+            bookmarks             : (function () {
+                var b = Cookies.getJSON('bookviewer' + brId);
+                return b && b.length > 0 ? b : [];
+            })(),
+            onToggleBookmark      : function () {
+                Cookies.set('bookviewer' + brId, JSON.stringify(this.options.bookmarks), {path: '/'});
+            },
+            buttons               : {
+                closeToc: {
+                    enabled: true,
+                    appendTo: ".flipbook-tocHolder",
+                    title: "Мазмұнын жабу",
+                    "class": "fa-close",
+                    template: "<span></span>",
+                    callback: function(e) {
+                        this.tocShowing && this["btncontent"] && this["btncontent"].removeClass("active"),
+                                this.toggleToc();
+                    }
+                },
+                closeBookmarks: {
+                    enabled: true,
+                    appendTo: ".flipbook-bookmarksListHolder",
+                    title: "Бетбелгілерді жабу",
+                    "class": "fa-close",
+                    template: "<span></span>",
+                    callback: function(e) {
+                        this.bookmarkShowing && this["btnbookmarks"] && this["btnbookmarks"].removeClass("active"),
+                                this.toggleBookmarksList();
+                    }
+                },
+                editBookmarks : {
+                    enabled : true,
+                    appendTo: ".flipbook-bookmarksListHolder",
+                    title   : "Бетбелгілерді өзгерту",
+                    "class" : "fa-pencil",
+                    template: "<span></span>",
+                    callback: function (e) {
+                        var el = $(e.target);
+                        el.hasClass("fa-pencil") ?
+                                el.addClass("fa-check").removeClass("fa-pencil") :
+                                el.addClass("fa-pencil").removeClass("fa-check");
+                        this.toggleEditBookmarksList();
+                    }
+                },
+                closePages: {
+                    enabled: true,
+                    appendTo: ".flipbook-thumbHolder",
+                    title: "Алдын-ала қарау терезесін жабу",
+                    "class": "fa-close",
+                    template: "<span></span>",
+                    callback: function(e) {
+                        this.thumbsCreated && this["btnpages"] && this["btnpages"].removeClass("active"),
+                                this.toggleThumbs();
+                    }
+                },
+                next          : {
+                    enabled : function () {
+                        return !this.options.isMobile;
+                    },
+                    appendTo: ".flipbook-bookLayer",
+                    title   : "Алға",
+                    "class" : "fa-angle-right",
+                    template: "<span></span>",
+                    callback: function (e) {
+                        this.Book.nextPage()
+                    }
+                },
+                prev          : {
+                    enabled : function () {
+                        return !this.options.isMobile;
+                    },
+                    appendTo: ".flipbook-bookLayer",
+                    title   : "Артқа",
+                    "class" : "fa-angle-left",
+                    template: "<span></span>",
+                    callback: function (e) {
+                        this.Book.prevPage()
+                    }
+                },
+                begin         : {
+                    enabled : true,
+                    appendTo: ".flipbook-menu",
+                    title   : "Басына",
+                    "class" : "fa-angle-double-left",
+                    template: "<div></div>",
+                    callback: function (e) {
+                        this.Book.goToPage(0);
+                    }
+                },
+                autoplay      : {
+                    enabled : true,
+                    appendTo: ".flipbook-menu",
+                    title   : "Презентация",
+                    "class" : "fa-play",
+                    template: "<div></div>",
+                    callback: function (e) {
+                        this.autoplay || this.Book.nextPage(), this.toggleAutoplay()
+                    }
+                },
+                end           : {
+                    enabled : true,
+                    appendTo: ".flipbook-menu",
+                    title   : "Аяғына",
+                    "class" : "fa-angle-double-right",
+                    template: "<div></div>",
+                    callback: function (e) {
+                        this.Book.goToPage(this.pages.length - 1)
+                    }
+                },
+                zoomin        : {
+                    enabled : function () {
+                        return !this.options.isMobile;
+                    },
+                    appendTo: ".flipbook-menu",
+                    title   : "Үлкейту",
+                    "class" : "fa-plus",
+                    template: "<div></div>",
+                    callback: function (e) {
+                        this.zoomIn();
+                    }
+                },
+                zoomout       : {
+                    enabled : function () {
+                        return !this.options.isMobile;
+                    },
+                    appendTo: ".flipbook-menu",
+                    title   : "Кішірейту",
+                    "class" : "fa-minus",
+                    template: "<div></div>",
+                    callback: function (e) {
+                        this.zoomOut();
+                    }
+                },
+                content: {
+                    enabled: true,
+                    appendTo: ".flipbook-menu",
+                    title: "Мазмұны",
+                    "class": "fa-list-ol",
+                    template: "<div></div>",
+                    callback: function(e) {
+                        this.bookmarkShowing && this["btnbookmarks"] && this["btnbookmarks"].removeClass("active"),
+                        this.thumbsCreated && this["btnpages"] && this["btnpages"].removeClass("active"),
+                                $(e.target).toggleClass("active"), this.toggleToc();
+                    }
+                },
+                pages: {
+                    enabled: function() {
+                        return !this.options.isMobile;
+                    },
+                    appendTo: ".flipbook-menu",
+                    title: "Алдын ала қарау",
+                    "class": "fa-th-large",
+                    template: "<div></div>",
+                    callback: function(e) {
+                        this.tocShowing && this["btncontent"] && this["btncontent"].removeClass("active"),
+                        this.bookmarkShowing && this["btnbookmarks"] && this["btnbookmarks"].removeClass("active"),
+                                $(e.target).toggleClass("active"), this.toggleThumbs();
+                    }
+                },
+                bookmarks: {
+                    enabled: true,
+                    appendTo: ".flipbook-menu",
+                    title: "Бетбелгілер",
+                    "class": "fa-bookmark",
+                    template: "<div></div>",
+                    callback: function(e) {
+                        this.tocShowing && this["btncontent"] && this["btncontent"].removeClass("active"),
+                        this.thumbsCreated && this["btnpages"] && this["btnpages"].removeClass("active"),
+                                $(e.target).toggleClass("active"), this.toggleBookmarksList();
+                    }
+                },
+                bookmark      : {
+                    enabled : true,
+                    prepend : ".flipbook-currentPageInner",
+                    title   : "Бетбелгілерге сақтау",
+                    "class" : "fa-bookmark-o",
+                    template: "<div></div>",
+                    callback: function (e) {
+                        this.toggleBookmark();
+                    }
+                },
+                info          : {
+                    enabled : true,
+                    appendTo: ".flipbook-menu",
+                    title   : "Атауын бекіту",
+                    "class" : "fa-info",
+                    template: "<div></div>",
+                    callback: function (e) {
+                        $(e.target).toggleClass("active"), this.infoFreeze = !this.infoFreeze, this.infoBarToggle()
+                    }
+                },
+                sound         : {
+                    enabled : true,
+                    appendTo: ".flipbook-menu",
+                    title   : "Дауысын қосу/өшіру",
+                    "class" : "fa-volume-up",
+                    template: "<div></div>",
+                    callback: function (e) {
+                        this.options.sound ?
+                                (this.options.sound = false, $(e.target).addClass("fa-volume-off").removeClass("fa-volume-up")) :
+                                (this.options.sound = true, $(e.target).addClass("fa-volume-up").removeClass("fa-volume-off"))
+                    }
+                },
+                fullscreen    : {
+                    enabled : function () {
+                        return !this.options.isMobile;
+                    },
+                    appendTo: ".flipbook-menu",
+                    title   : "Толық экран",
+                    "class" : "fa-expand",
+                    template: "<div></div>",
+                    callback: function (e) {
+                        this.elem.hasClass("flipbook-browser-fullscreen") ?
+                                $(e.target).addClass("fa-expand").removeClass("fa-compress") :
+                                $(e.target).addClass("fa-compress").removeClass("fa-expand")
+                        this.toggleExpand();
+                    }
+                }
+            }
+        }
+
+        window.fb = $("#container").flipBook(options);
+    });

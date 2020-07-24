@@ -22,8 +22,6 @@ console.log('---------------------')
 let fileTemp = './temp.txt'
 fs.openSync(fileTemp, 'w')
 
-let tempData = ''
-
 // Scrapper plugins
 class MyPlugin {
     apply(registerAction) {
@@ -35,7 +33,7 @@ class MyPlugin {
 
 // Parameters for scraper
 const options = {
-    urls: ['http://kazneb.kz/bookView/view/?brId=1557843&lang=kk'],
+    urls: [`http://kazneb.kz/bookView/view/?brId=${bookPath}&lang=kk`],
     directory: './temp',
     sources: [
       {selector: 'none', attr: 'none'}
@@ -45,31 +43,33 @@ const options = {
   };
 
 const dataGet = () => {
-    // console.log(tempData)
     fs.readFile('./temp/index.html', 'utf8', function (err,data) {
         if (err) {
           return console.log(err);
         }
 
+        // using parser to get data fopm the file
         const $ = cheerio.load(data)
 
-        // first script
+        // first script with global info
         const firstScr = $('script')
         console.log(firstScr.html())
         console.log(firstScr.text())
         
-        // scond script
+        // scond script with adress data
         const scrArr = [];
-
         const secScr = $('script').each(function(i, elem) {
             scrArr[i] = $(this).html();
         });
-        
         scrArr.join(', ');
-        console.log(secScr.html())
-        console.log(secScr.length)
-        console.log(scrArr)
-      
+        const dataScr = scrArr[scrArr.length - 1]
+
+        // Save address data to the file
+        fs.appendFile('./temp.txt', dataScr, function (err) {
+            if (err) throw err;
+            console.log('==> We got some parsed adresses, but not so good - let us pozdorovatsya s bratkami', '\n');
+          });
+
     });
 
     
@@ -79,7 +79,7 @@ const dataGet = () => {
 
 }
 
-scrape(options).then((result) => {tempData = result, console.log('-== Making zhumaysinba great again... ==-', '\n', '\n','---------------------'), dataGet()});
+scrape(options).then((result) => {console.log('-== Making zhumaysinba great again... ==-', '\n', '\n','---------------------'), dataGet()});
 console.log('')
 
 // We got the data on this moment...
