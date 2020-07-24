@@ -2,6 +2,7 @@ const fs = require('fs-extra'); // files operations
 const scrape = require('website-scraper'); // web page scraper
 var rimraf = require("rimraf"); // directory removing
 var cheerio = require('cheerio'); // parser
+const download = require('image-downloader') // image downloader
 
 // Removing old temp if exist
 rimraf.sync("./temp");
@@ -108,16 +109,26 @@ const dataGet = () => {
             console.log('==> We got parsed links, there are', newData.length, 'links! ', '\n');
             console.log('==> Natalya morskaya pehota!')
 
-
+            // Downloading the pictures
+            console.log('ok, da')
+        
+            const downOptions = {
+                url: 'http://kazneb.kz/FileStore/dataFiles/02/37/1557843/content/0001.png?time=1595575185793&key=b2cd279feb58aaf73fd12cd55e32a07e',
+                dest: './img/'                
+              }
+        
+            download.image(downOptions)
+                .then(({ filename }) => {
+                console.log('Saved to', filename)
+                })
+                .catch((err) => console.error(err))
+            
+            
         });
         
 
     });
 
-    
-
-
-    console.log('ok, da')
 
 }
 
