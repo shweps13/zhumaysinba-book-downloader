@@ -5,7 +5,8 @@ var cheerio = require('cheerio'); // parser
 const download = require('image-downloader') // image downloader
 
 // Removing old temp if exist
-rimraf.sync("./temp");
+rimraf.sync("./temp"); // links
+rimraf.sync("./img"); // images 
 
 const nodePath = process.argv[0];
 const appPath = process.argv[1];
@@ -109,17 +110,22 @@ const dataGet = () => {
             console.log('==> We got parsed links, there are', newData.length, 'links! ', '\n');
             console.log('==> Natalya morskaya pehota!')
 
+            console.log('ok, da', '\n')
+            
             // Downloading the pictures
-            console.log('ok, da')
+
+            if (!fs.existsSync('./img')){   //creating img folder after cleaning temp
+                fs.mkdirSync('./img');
+            }
         
             const downOptions = {
-                url: 'http://kazneb.kz/FileStore/dataFiles/02/37/1557843/content/0001.png?time=1595575185793&key=b2cd279feb58aaf73fd12cd55e32a07e',
+                url: newData[0],
                 dest: './img/'                
               }
         
             download.image(downOptions)
                 .then(({ filename }) => {
-                console.log('Saved to', filename)
+                console.log('> Saved to', filename)
                 })
                 .catch((err) => console.error(err))
             
