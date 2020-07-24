@@ -81,8 +81,8 @@ const dataGet = () => {
 
             let newData = []
 
-            // for (i = 0; i < dataParsArr.length; i++) {
-            for (i = 14; i < 15; i++) {
+            for (i = 0; i < dataParsArr.length; i++) {
+            // for (i = 0; i < 15; i++) {
                 let unit = ""
                 let page = false
                 let start = false
@@ -90,8 +90,9 @@ const dataGet = () => {
 
                 for (let j = 0; j < dataParsArr[i].length; j++) {
                     // console.log(dataParsArr[i][j]);
-                    
-                    if (page == true && start == true && dataParsArr[i][j] == '"') {
+                    if (abort == true) {
+                        break
+                    } else if (page == true && start == true && dataParsArr[i][j] == '"') {
                         // console.log('============Done=============')
                         abort = true
                         break
@@ -102,14 +103,12 @@ const dataGet = () => {
                     } else if (page == true && start == true) {
                         // console.log('Here')
                         unit = unit + dataParsArr[i][j]
-                    }
+                    } 
                 }
                 
-                console.log('=>>', unit)
-                newData.push(unit)
-
-                if (abort == true) {
-                    break
+                // console.log('=>>', unit)
+                if (unit.length > 25 ) {
+                    newData.push(unit)
                 }
 
             }
