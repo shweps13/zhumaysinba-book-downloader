@@ -67,7 +67,7 @@ const dataGet = () => {
         // Save address data to the file
         fs.appendFile('./temp.txt', dataScr, function (err) {
             if (err) throw err;
-            console.log('==> We got some parsed adresses, but not good enough - let us pozdorovatsya s bratkami', '\n');
+            // console.log('==> We got some parsed links, but not good enough - let us pozdorovatsya s bratkami', '\n');
         });
 
         // Trying to parce that hell
@@ -98,13 +98,17 @@ const dataGet = () => {
                     } 
                 }
                 
-                if (unit.length > 25 ) {
+                if (unit.length > 50 ) {
                     newData.push('http://kazneb.kz' + unit)
                 }
 
             }
 
-            console.log('Data', newData)
+            // console.log('Data', newData)
+            console.log('==> We got parsed links, there are', newData.length, 'links! ', '\n');
+            console.log('==> Natalya morskaya pehota!')
+
+
         });
         
 
