@@ -121,12 +121,6 @@ const dataGet = () => {
 
             fs.openSync('./pdfData.txt', 'w')
 
-            // fs.writeFile('./pdfData.js', JSON.stringify(pdfData), function (err) {
-            // fs.writeFile('./pdfData.txt', pdfData, function (err) {
-            //     if (err) return console.log(err);
-            //     console.log('-= PDF data was saved! =-', '\n');
-            //     console.log('==> We will download pictures soon', '\n');
-            // });
 
             for(i = 0; i < pdfData.length; i+=1) {
                 fs.appendFileSync('./pdfData.txt', pdfData[i] + "\n");    
@@ -159,18 +153,6 @@ const dataGet = () => {
 
             }
             
-            // if (!fs.existsSync('./pdf')){   
-            //     fs.mkdirSync('./pdf');
-            // }
-        
-            // const doc = new PDFDocument();  //starting new pdf here
-            // doc.pipe(fs.createWriteStream('./pdf/output.pdf'));
-        
-            // for (i = 0; i < pdfData.length; i++) {
-            //     doc.image(pdfData[i], 5, 5, {fit: [580, 830], align: 'center', valign: 'center'})
-            // }
-            
-            // doc.end();
 
         });
         

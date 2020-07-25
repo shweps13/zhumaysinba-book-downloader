@@ -1,5 +1,26 @@
 const fs = require('fs-extra');
+const PDFDocument = require('pdfkit'); // pdf creator
 
 let pdfData = fs.readFileSync('pdfData.txt', 'utf8').split('\n')
-console.log(pdfData)
-console.log(pdfData.length)
+pdfData.pop(pdfData.length - 1)
+
+console.log('====================')
+console.log('==> Ok, we have', pdfData.length, 'pages to move into PDF', '\n')
+
+if (!fs.existsSync('./pdf')){   
+    fs.mkdirSync('./pdf');
+}
+
+const createPDF = (addr, num) => {
+    const doc = new PDFDocument();  //starting new pdf here
+
+    doc.pipe(fs.createWriteStream(`./pdf/output${num}.pdf`));
+    doc.image(addr, 5, 5, {fit: [580, 830], align: 'center', valign: 'center'})
+    doc.end();
+
+}
+
+for (i = 0; i < pdfData.length; i++) {
+    createPDF(pdfData[i], (i+1))
+}
+
