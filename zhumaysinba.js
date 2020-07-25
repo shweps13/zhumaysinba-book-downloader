@@ -119,13 +119,19 @@ const dataGet = () => {
 
             // saving local path to imgs for pdf converting
 
-            fs.openSync('./pdfData.js', 'w')
+            fs.openSync('./pdfData.txt', 'w')
 
-            fs.writeFile('./pdfData.js', JSON.stringify(pdfData), function (err) {
-                if (err) return console.log(err);
-                console.log('-= PDF data was saved! =-', '\n');
-                console.log('==> We will download pictures soon', '\n');
-            });
+            // fs.writeFile('./pdfData.js', JSON.stringify(pdfData), function (err) {
+            // fs.writeFile('./pdfData.txt', pdfData, function (err) {
+            //     if (err) return console.log(err);
+            //     console.log('-= PDF data was saved! =-', '\n');
+            //     console.log('==> We will download pictures soon', '\n');
+            // });
+
+            for(i = 0; i < pdfData.length; i+=1) {
+                fs.appendFileSync('./pdfData.txt', pdfData[i] + "\n");    
+            }
+
 
             console.log('==> We got parsed links, there are', newData.length, 'links! ', '\n');
             console.log('==> Natalya morskaya pehota!')
