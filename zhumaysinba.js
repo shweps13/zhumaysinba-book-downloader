@@ -107,7 +107,7 @@ const dataGet = () => {
 
             }
 
-            console.log('Data', newData)
+            // console.log('Data', newData)
             let pdfData = []
 
             for (i = 0; i < newData.length; i++) {
@@ -115,7 +115,17 @@ const dataGet = () => {
                 pdfData.push('./img' + newData[i].slice(58, -56))
             }
             
-            console.log(pdfData)
+            // console.log(pdfData)
+
+            // saving local path to imgs for pdf converting
+
+            fs.openSync('./pdfData.js', 'w')
+
+            fs.writeFile('./pdfData.js', JSON.stringify(pdfData), function (err) {
+                if (err) return console.log(err);
+                console.log('-= PDF data was saved! =-', '\n');
+                console.log('==> We will download pictures soon', '\n');
+            });
 
             console.log('==> We got parsed links, there are', newData.length, 'links! ', '\n');
             console.log('==> Natalya morskaya pehota!')
@@ -124,37 +134,37 @@ const dataGet = () => {
             
             // ## Downloading the pictures ##
 
-            // if (!fs.existsSync('./img')){   //creating img folder after cleaning temp
-            //     fs.mkdirSync('./img');
-            // }
+            if (!fs.existsSync('./img')){   //creating img folder after cleaning temp
+                fs.mkdirSync('./img');
+            }
 
-            // for (i = 0; i < newData.length; i++) {
+            for (i = 0; i < newData.length; i++) {
                 
-            //     const downOptions = {
-            //         url: newData[i],
-            //         dest: './img/'                
-            //       }
+                const downOptions = {
+                    url: newData[i],
+                    dest: './img/'                
+                  }
             
-            //     download.image(downOptions)
-            //         .then(({ filename }) => {
-            //             console.log('> Book page was saved to ==>', filename)
-            //         })
-            //         .catch((err) => console.error(err))
+                download.image(downOptions)
+                    .then(({ filename }) => {
+                        console.log('> Book page was saved to ==>', filename)
+                    })
+                    .catch((err) => console.error(err))
 
+            }
+            
+            // if (!fs.existsSync('./pdf')){   
+            //     fs.mkdirSync('./pdf');
+            // }
+        
+            // const doc = new PDFDocument();  //starting new pdf here
+            // doc.pipe(fs.createWriteStream('./pdf/output.pdf'));
+        
+            // for (i = 0; i < pdfData.length; i++) {
+            //     doc.image(pdfData[i], 5, 5, {fit: [580, 830], align: 'center', valign: 'center'})
             // }
             
-            if (!fs.existsSync('./pdf')){   
-                fs.mkdirSync('./pdf');
-            }
-        
-            const doc = new PDFDocument();  //starting new pdf here
-            doc.pipe(fs.createWriteStream('./pdf/output.pdf'));
-        
-            for (i = 0; i < pdfData.length; i++) {
-                doc.image(pdfData[i], 5, 5, {fit: [580, 830], align: 'center', valign: 'center'})
-            }
-            
-            doc.end();
+            // doc.end();
 
         });
         
