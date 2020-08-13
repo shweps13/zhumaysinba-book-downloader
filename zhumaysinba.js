@@ -4,6 +4,8 @@ var rimraf = require("rimraf"); // directory removing
 var cheerio = require('cheerio'); // parser
 const download = require('image-downloader') // image downloader
 const PDFDocument = require('pdfkit'); // pdf creator
+var path = require("path");
+
 
 // Removing old temp if exist
 rimraf.sync("./temp"); // links
@@ -24,7 +26,6 @@ console.log('---------------------')
 // Creating or cleaning temp file for the page data
 let fileTemp = './temp.txt'
 fs.openSync(fileTemp, 'w')
-
 // Scrapper plugins
 class MyPlugin {
     apply(registerAction) {
@@ -56,8 +57,8 @@ const dataGet = () => {
 
         // first script with global info
         const firstScr = $('script')
-        console.log(firstScr.html())
-        console.log(firstScr.text())
+        //console.log(firstScr.html())
+        //console.log(firstScr.text())
         
         // scond script with adress data
         const scrArr = [];
@@ -107,7 +108,6 @@ const dataGet = () => {
 
             }
 
-            // console.log('Data', newData)
             let pdfData = []
 
             for (i = 0; i < newData.length; i++) {
@@ -115,8 +115,6 @@ const dataGet = () => {
                 pdfData.push('./img' + newData[i].slice(58, -56))
             }
             
-            // console.log(pdfData)
-
             // saving local path to imgs for pdf converting
 
             fs.openSync('./pdfData.txt', 'w')
@@ -128,37 +126,41 @@ const dataGet = () => {
 
 
             console.log('==> We got parsed links, there are', newData.length, 'links! ', '\n');
-            console.log('==> Natalya morskaya pehota!')
-
-            console.log('ok, da', '\n')
             
-            // ## Downloading the pictures ##
+            // downloading the pictures
 
-            if (!fs.existsSync('./img')){   //creating img folder after cleaning temp
+            if (!fs.existsSync('./img')){  
                 fs.mkdirSync('./img');
             }
-
             for (i = 0; i < newData.length; i++) {
                 
                 const downOptions = {
                     url: newData[i],
                     dest: './img/'                
-                  }
-            
-                download.image(downOptions)
+                }
+                var file = "./img/" + path.basename(newData[i]).split('?')[0];
+
+                if(!fs.existsSync(file)) {
+                    download.image(downOptions)
                     .then(({ filename }) => {
                         console.log('> Book page was saved to ==>', filename)
                     })
-                    .catch((err) => console.error(err))
-
+                    .catch((err) => {
+                        download.image(downOptions)
+                        .then(({ filename }) => {
+                            console.log('> Book page was saved to ==>', filename)
+                        })
+                    })
+                } else {
+                    console.log("page " + file + " already exists");
+                }
+                
             }
-            
 
         });
         
 
     });
-
 
 }
 

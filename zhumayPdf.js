@@ -16,8 +16,8 @@ if (!fs.existsSync('./pdf')){
 const createPDF = (addr, num) => {
     const doc = new PDFDocument();  //starting new pdf here
 
-    doc.pipe(fs.createWriteStream(`./pdf/output${num}.pdf`));
-    files.push(`./pdf/output${num}.pdf`);
+    doc.pipe(fs.createWriteStream(`./pdf/${num}.pdf`));
+    files.push(`./pdf/${num}.pdf`);
     doc.image(addr, 5, 5, {fit: [580, 830], align: 'center', valign: 'center'})
     doc.end();
 
@@ -37,16 +37,6 @@ const merge = require('easy-pdf-merge');
 merge(files,`./ready/ready.pdf`,function(err){
   if(err) {
     return console.log(err)
-  }
-
-  console.log('Success, now deleting files')
-
-  try {
-    fs.unlinkSync('./pdf')
-    fs.unlinkSync('./img')
-    fs.unlinkSync('./temp')        
-  } catch(err) {
-    console.error(err)
   }
 
   console.log('Success')
